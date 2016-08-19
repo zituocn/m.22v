@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>{{.title}}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, target-densitydpi=high-dpi, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta content="telephone=no" name="format-detection" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/img/icon.png" />
+	<link rel="stylesheet" href="/static/css/vmovie.css"/>
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>		
+</head>
+<body>
+	<article>
+		<header>
+			<a href="/"  rel="nofollow" class="index">首页</a>
+			<h1>爱美剧 - 美剧下载</h1>
+		</header>
+		{{template "header"}}
+		<div class="fix"></div>
+		<section>
+			<div class="error">
+				{{str2html .content}}
+				<br />
+				请浏览其他内容吧 ：）
+			</div>									
+		</section>
+		{{template "footer"}}
+	</article>
+</body>
+</html>

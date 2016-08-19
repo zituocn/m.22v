@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>今日美剧更新_美剧今日更新(星期{{.week}})</title>
+	<meta name="keywords" content="{{.cinfo.Keywords}}" />
+	<meta name="Description" content="{{.cinfo.Description}}" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, target-densitydpi=high-dpi, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta content="telephone=no" name="format-detection" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/img/icon.png" />
+	<link rel="stylesheet" href="/static/css/vmovie.css"/>
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+</head>
+<body>
+	<article>
+		<header>
+			<a href="/"  rel="nofollow" class="home">首页</a>
+			<h1>今日美剧更新(星期{{.week}})</h1>
+		</header>
+		{{template "header"}}
+		<div class="fix"></div>
+		<section>
+			<div class="list">
+				<ul>
+					<li class="title">{{.cinfo.Name}}</li>
+					{{range .list}}
+					<a href="/v/{{.Id}}/">
+					<li>
+						<div class="photo"><img src="{{.Photo}}?imageView2/1/w/240/h/320/q/100" alt=""></div>
+						<dl>
+							<dt>{{.Name}}</dt>
+							<dd>英文：{{.Ename}}</dd>
+							<dd>类型：{{.Cname}}</dd>
+							<dd>更新：{{getisend .Hasepisode .Episode}}</dd>
+							<dd>星期：星期{{.Updateweek}}</dd>
+							<dd>首播：{{.Playdate}}</dd>
+						</dl>
+					</li>
+					</a>{{end}}
+				</ul>
+			</div>											
+		</section>
+		{{template "footer"}}
+	</article>
+</body>
+</html>

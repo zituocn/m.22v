@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>美剧新闻_美剧动态_美剧资讯_美剧剧情分析|爱美剧</title>
+	<meta name="keywords" content="美剧剧情,美剧海报,美剧新闻,美剧动态,美剧情报站" />
+	<meta name="Description" content="此频道提供美剧新闻、资讯、动态、剧情、海报、美剧汇总等。" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, target-densitydpi=high-dpi, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta content="telephone=no" name="format-detection" />
+	<link rel="canonical" href="https://m.22v.net/news/" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/img/icon.png" />
+	<link rel="stylesheet" href="/static/css/vmovie.css"/>
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript">var cid="8";</script>	
+</head>
+<body>
+	<article>
+		<header>
+			<a href="/"  rel="nofollow" class="home">首页</a>
+			<h1>美剧资讯</h1>
+		</header>
+		{{template "header"}}
+		<div class="fix"></div>
+		<section>
+			<div class="news">
+				<ul>
+					<li class="title">文章列表</li>
+					{{range .list}}
+					<li><a href="/article/{{.Id}}/" title="{{.Title}}">{{substr .Title 0 50}}</a></li>
+					</a>{{end}}
+					{{str2html .pager}}
+				</ul>
+			</div>											
+		</section>
+		{{template "footer"}}
+	</article>
+	<script type="text/javascript">
+		$("#m"+cid).attr("class","tab");
+	</script>
+</body>
+</html>

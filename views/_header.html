@@ -1,0 +1,33 @@
+{{define "header"}}
+<script type="text/javascript">
+		function search(){
+			var key = $("#key");
+			if(key.val()==""||$.trim(key.val()).length==0){
+				return false;
+			}else{
+				this.location.href="/search/"+$.trim(key.val())+"/";
+			}
+			return false;
+		}
+</script>
+		<nav>
+			<div id="menu">
+				<ul>
+					<li><a href="/m/1/" id="m1">动作分类</a></li>
+					<li><a href="/m/2/" id="m2">科幻魔幻</a></li>
+					<li><a href="/m/3/" id="m3">情景喜剧</a></li>
+					<li><a href="/m/4/" id="m4">罪案碟战</a></li>
+					<li><a href="/m/5/" id="m5">灵异惊悚</a></li>
+					<li><a href="/m/6/" id="m6">律政医务剧情</a></li>
+					<li><a href="/new/" id="m7">新剧推荐</a></li>
+					<li><a href="/news/" id="m8">美剧情报站</a></li>
+					<li><a href="/article/1/" id="m9">求片室</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div id="search">
+			<form action="/search/" id="searchform" method="get" onsubmit="return search();">
+			<input type="text" id="key" name="key" class="input" placeholder="搜索：影片名称"></input>
+			</form>
+		</div>
+		{{end}}

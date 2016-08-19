@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>{{.info.Title}}</title>
+	<meta name="keywords" content="{{.info.Keywords}}" />
+	<meta name="Description" content="{{.info.Description}}" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, target-densitydpi=high-dpi, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta content="telephone=no" name="format-detection" />
+	<link rel="canonical" href="https://m.22v.net/article/{{.info.Id}}/" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/img/icon.png" />
+	<link rel="stylesheet" href="/static/css/vmovie.css"/>
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$("#talk").on("click",function(){
+			$("section").hide();
+			$(".talk").show();
+			$(".subnav").find("a").removeClass("tab");
+			$(this).addClass("tab");
+		});
+	});
+	</script>	
+</head>
+<body>
+	<article>
+		<header>
+			<a href="/news/" rel="nofollow" class="home">美剧资讯</a>
+			<h1>文章正文</h1>
+		</header>
+		{{template "header"}}
+		<div class="fix"></div>
+		<div class="subnav">
+			<a href="/article/{{.info.Id}}/" class="left tab">文章详情</a>
+			<a href="javascript:void(0);" id="talk" class="right">文章留言</a>
+		</div>
+		<div class="fix"></div>		
+		<section>
+			<div class="pagedetail">
+				<div class="title"><h2>{{.info.Title}}</h2></div>
+				<div class="text">
+					<p>{{str2html .info.Content}}</p>
+				</div>
+			</div>										
+		</section>
+		<div class="fix"></div>
+		<section class="talk">
+			<div class="detail">
+				<div class="title"><h2>评论：《{{.info.Title}}》</h2></div>
+			</div>
+			<div class="talkbox">
+				<div class="ds-thread" data-thread-key="A{{.info.Id}}" data-title="{{.info.Title}}" data-url="https://22v.net/article/{{.info.Id}}/"></div>
+				<script type="text/javascript">
+				var duoshuoQuery = {short_name:"22v"};
+				(function() {
+					var ds = document.createElement('script');
+					ds.type = 'text/javascript';ds.async = true;
+					ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+					ds.charset = 'UTF-8';
+					(document.getElementsByTagName('head')[0] 
+					 || document.getElementsByTagName('body')[0]).appendChild(ds);
+				})();
+				</script>
+			</div>
+		</section>		
+		{{template "footer"}}
+	</article>
+</body>
+</html>
